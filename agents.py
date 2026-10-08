@@ -75,7 +75,7 @@ writer_chain=writer_prompt | llm | StrOutputParser()
 critic_prompt = ChatPromptTemplate.from_messages([
     ("system",
      "You are a sharp and constructive research critic. Be honest and specific. "
-     "Today's date is August 2026. Your own training data has a cutoff before this date, "
+     "Today's date is October 2026. Your own training data has a cutoff before this date, "
      "so you will not personally recognize many 2026 events - that does NOT make them fake. "
      "The report you're reviewing is built from live web search results with real URLs from "
      "real domains (wsj.com, cnbc.com, etc) - treat these as legitimate unless the report text "
