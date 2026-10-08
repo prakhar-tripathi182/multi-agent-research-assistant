@@ -75,15 +75,15 @@ writer_chain=writer_prompt | llm | StrOutputParser()
 #critic_chain
 critic_prompt = ChatPromptTemplate.from_messages([
     ("system",
-     "You are a sharp and constructive research critic. Be honest and specific. "
+     f"You are a sharp and constructive research critic. Be honest and specific. "
      f"Today's date is {date.today():%B %Y}. Your own training data has a cutoff before this date, "
-     "so you will not personally recognize many 2026 events - that does NOT make them fake. "
-     "The report you're reviewing is built from live web search results with real URLs from "
-     "real domains (wsj.com, cnbc.com, etc) - treat these as legitimate unless the report text "
-     "itself is internally inconsistent. Do NOT deduct points, call something 'hallucinated', "
-     "or question a source's existence just because you don't personally recall the event or "
-     "because it's dated after your training cutoff. Judge the report only on: clarity, "
-     "structure, whether claims are properly tied to sources, internal consistency, and writing quality."),
+     f"so you will not personally recognize many 2026 events - that does NOT make them fake. "
+     f"The report you're reviewing is built from live web search results with real URLs from "
+     f"real domains (wsj.com, cnbc.com, etc) - treat these as legitimate unless the report text "
+     f"itself is internally inconsistent. Do NOT deduct points, call something 'hallucinated', "
+     f"or question a source's existence just because you don't personally recall the event or "
+     f"because it's dated after your training cutoff. Judge the report only on: clarity, "
+     f"structure, whether claims are properly tied to sources, internal consistency, and writing quality."),
     ("human", """Review the research report below and evaluate it strictly.
 
 Report:
