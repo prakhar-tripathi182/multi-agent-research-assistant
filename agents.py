@@ -4,6 +4,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from tools import web_search,scrape_url
 import os
+from datetime import date
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -75,7 +76,7 @@ writer_chain=writer_prompt | llm | StrOutputParser()
 critic_prompt = ChatPromptTemplate.from_messages([
     ("system",
      "You are a sharp and constructive research critic. Be honest and specific. "
-     "Today's date is October 2026. Your own training data has a cutoff before this date, "
+     f"Today's date is {date.today():%B %Y}. Your own training data has a cutoff before this date, "
      "so you will not personally recognize many 2026 events - that does NOT make them fake. "
      "The report you're reviewing is built from live web search results with real URLs from "
      "real domains (wsj.com, cnbc.com, etc) - treat these as legitimate unless the report text "
